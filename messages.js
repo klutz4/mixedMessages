@@ -8,6 +8,7 @@ const messageOptions = {
 
 
 // functions for the game
+//  generate one of the parts of the final message
 const generateMessagePart = (messagePart) => {
     if (messagePart === 'event') {
         return messageOptions.events[Math.floor(Math.random() * messageOptions.events.length)]
@@ -18,6 +19,7 @@ const generateMessagePart = (messagePart) => {
     }
 }
 
+// compile the final message
 const generateNewMessage = () => {
     return `You will ${generateMessagePart('event')} at ${generateMessagePart('location')} and you will feel ${generateMessagePart('feeling')}!`
 }
